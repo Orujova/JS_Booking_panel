@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Booking</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar_links">
+          <div class="sidebar_link active">
+            <div class="done_icon_one">1</div>
+            <h4>Staff</h4>
+          </div>
+          <div class="sidebar_link">
+            <div class="done_icon_two">2</div>
+            <h4>Service</h4>
+          </div>
+          <div class="sidebar_link">
+            <div class="done_icon_three">3</div>
+            <h4>Date & Time</h4>
+          </div>
+          <div class="sidebar_link">
+            <div>4</div>
+            <h4>Confirmation</h4>
+          </div>
+        </div>
+        <div class="sidebar_line"></div>
+      </div>
+      <div class="main_content">
+        <div>
+          <h2 class="select">Select staff</h2>
+          <div class="content_line"></div>
+        </div>
+        <div class="cards" id="staffCards"></div>
+        <div class="cards" id="serviceCards"></div>
+        <div class="datecontainer">
+          <div class="calendar" id="calendar">
+            <div class="calendar-header">
+              <button id="prevMonth">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="prev"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 19.5L8.25 12l7.5-7.5"
+                  />
+                </svg>
+              </button>
+              <h2 id="currentMonthYear"></h2>
+              <button id="nextMonth">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="next"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="date">
+              <div class="calendar-weekdays"></div>
+              <div class="calendar-days" id="calendarDays"></div>
+            </div>
+          </div>
+          <div class="time-section" id="timeSection">
+            <h2>Time</h2>
+            <div class="time_container">
+              <div class="time">Select Time</div>
+              <div class="time-slots" id="timeSlots"></div>
+            </div>
+          </div>
+        </div>
+        <div id="confirmcontainer" style="display: none">
+          <div>
+            <label>
+              <p>First name <span>*</span></p>
+              <input type="text" required name="firstName" />
+            </label>
+            <label>
+              <p>Last name <span>* </span></p>
+              <input type="text" required name="lastName" />
+            </label>
+            <label>
+              <p>Email <span> *</span></p>
+              <input type="email" required name="email" />
+            </label>
+            <label>
+              <p>Phone</p>
+              <input type="tel" name="phone" />
+            </label>
+          </div>
+          <div class="result"></div>
+        </div>
+        <div class="content_footer">
+          <button id="backButton" class="button">Back</button>
+          <button id="error">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="error_icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"
+              />
+            </svg>
+            Select staff
+          </button>
+          <button id="nextButton" class="button">Next</button>
+        </div>
+      </div>
+    </div>
+    <div id="inputFillModal" class="modal">
+      <div class="modal-content">
+        <p>Please fill all input fields!</p>
+        <button id="confirmInputFill">OK</button>
+      </div>
+    </div>
+    <div id="successfulModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Confirmation successfully completed!</p>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

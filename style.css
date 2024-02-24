@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(134.72deg, #8e53e4 0%, #4b22b9 101.5%);
+}
+
+.container {
+  width: 65%;
+  height: 560px;
+  display: flex;
+}
+
+.sidebar {
+  width: 25%;
+  height: 560px;
+  background-color: rgba(41, 45, 50, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar_line {
+  width: 100%;
+  height: 76px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar_links {
+  padding: 32px;
+}
+
+.sidebar_link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: not-allowed;
+  margin-bottom: 24px;
+}
+
+.sidebar_link h4 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: rgba(98, 108, 118, 1);
+}
+
+.sidebar_link div {
+  width: 25px;
+  height: 24px;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(77, 84, 90, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+}
+
+.main_content {
+  background-color: rgba(245, 247, 250, 1);
+  width: 75%;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main_content h2 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: rgba(41, 45, 50, 1);
+  padding: 19px 30px;
+}
+
+.content_line {
+  width: 100%;
+  border: 1px solid rgba(227, 234, 243, 1);
+}
+
+.content_footer {
+  width: 100%;
+  height: 76px;
+  background-color: rgba(255, 255, 255, 1);
+  border-top: 1px solid rgba(227, 234, 243, 1);
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 30px;
+}
+
+.button {
+  width: 59px;
+  height: 36px;
+  background: rgba(108, 112, 220, 1);
+  border: none;
+  padding: 9px 14px 9px 14px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+}
+
+.cards {
+  padding: 19px 30px;
+  height: calc(560px - 76px);
+}
+
+.card {
+  background: rgba(255, 255, 255, 1);
+  width: 100%;
+  height: 80px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.service_card {
+  justify-content: space-between;
+}
+
+.profil {
+  width: 92px;
+  height: 80px;
+  padding: 15px 22px 15px 20px;
+}
+
+.card h4 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  color: rgba(41, 45, 50, 1);
+}
+
+.servicePrice {
+  color: rgba(83, 213, 108, 1) !important;
+  padding: 20px !important;
+  font-size: 18px !important;
+}
+
+.card p {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19px;
+  color: rgba(130, 143, 154, 1);
+}
+
+.selected {
+  border: 2px solid rgba(83, 213, 108, 1);
+}
+
+#error {
+  background: rgba(244, 190, 108, 1);
+  border: none;
+  width: 143px;
+  height: 42px;
+  padding: 9px 14px 9px 14px;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 1);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.error_icon {
+  height: 24px;
+  width: 24px;
+  stroke: rgba(255, 255, 255, 1);
+}
+
+#backButton,
+#error {
+  visibility: hidden;
+}
+
+.active h4 {
+  color: rgba(83, 213, 108, 1);
+  cursor: pointer;
+}
+
+.active div {
+  background: rgba(83, 213, 108, 1);
+  cursor: pointer;
+}
+
+.calendar {
+  width: 55%;
+  display: none;
+  padding: 19px 30px;
+}
+
+.date {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  font-weight: bold;
+  text-align: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba(227, 234, 243, 1);
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+.calendar-weekday {
+  color: rgba(200, 201, 204, 1);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+}
+
+.calendar-day {
+  background: rgba(236, 237, 241, 1);
+  color: rgba(17, 17, 17, 1);
+  width: 100%;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0px;
+  text-align: center;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.selected-day {
+  background-color: rgba(108, 112, 220, 1);
+  color: #fff;
+}
+
+.datecontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.time-section {
+  display: none;
+  width: 43%;
+  text-align: center;
+}
+
+.prev,
+.next {
+  width: 20px;
+  height: 20px;
+  stroke: #000;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+}
+
+.time {
+  padding: 16px;
+  border-bottom: 1px solid rgba(227, 234, 243, 1);
+  color: rgba(108, 112, 220, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: center;
+}
+
+.time-section {
+  padding: 19px 30px;
+  padding-left: 0;
+}
+
+.time_container {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.05);
+  height: 304.8px;
+}
+
+.time-slot {
+  background: rgba(236, 239, 242, 1);
+  width: 85px;
+  height: 55px;
+  padding: 7px 22px 6px 21px;
+}
+
+.time-slots {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+}
+
+.selected-time {
+  background: rgba(83, 213, 108, 1);
+  color: #fff;
+}
+
+.service_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  width: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.modal p {
+  margin-bottom: 24px;
+  color: rgba(244, 190, 108, 1);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+#successfulModal p {
+  color: rgba(83, 213, 108, 1);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding-right: 5px;
+  font-size: 34px;
+  font-weight: 300;
+  color: rgb(188, 188, 188);
+  cursor: pointer;
+}
+
+.modal button {
+  padding: 10px 20px;
+  background-color: rgba(108, 112, 220, 1);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: rgba(245, 247, 250, 1);
+  color: rgba(41, 45, 50, 1);
+}
+
+.done h4 {
+  color: rgba(255, 255, 255, 1);
+}
+
+.done div {
+  background: rgba(108, 112, 220, 1);
+}
+
+.done_icon {
+  stroke: rgba(255, 255, 255, 1);
+  width: 16px;
+}
+
+#confirmcontainer {
+  padding: 32px;
+  height: calc(480px - 76px);
+}
+
+#confirmcontainer div:first-child {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+#confirmcontainer div:first-child label {
+  width: 100%;
+}
+
+#confirmcontainer p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 21px;
+  color: rgba(41, 45, 50, 1);
+  margin-bottom: 12px;
+}
+
+#confirmcontainer div:first-child span {
+  color: rgb(235, 98, 98);
+}
+
+#confirmcontainer div:first-child input {
+  border: 1px solid #ebebeb;
+  outline: none;
+  padding: 12px;
+  width: 100%;
+}
+
+.result {
+  width: 100%;
+  padding: 20px;
+  background-color: #ffff;
+  border: 1px solid #ebebeb;
+  margin-top: 20px;
+}
+
+.result strong {
+  color: rgba(108, 112, 220, 1);
+  margin-right: 8px;
+}
+
+.price {
+  color: rgba(83, 213, 108, 1);
+  font-size: 18px;
+  font-weight: 500;
+}
